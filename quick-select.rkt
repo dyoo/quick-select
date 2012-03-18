@@ -25,10 +25,11 @@
          return select(list, pivotNewIndex + 1, right, k - pivotDist)
 |#
 
+
+
 ;; Invariants: left and right are valid indicies into the vector.
 ;; k is a natural.
 (define (quick-select! vec left right k)
-  (printf "~a ~a ~a\n" left right vec)
   (cond [(= left right)
 	 (vector-ref vec left)]
 	[else
@@ -41,7 +42,10 @@
 	  [(< k pivot-dist)
 	   (quick-select! vec left (sub1 pivot-new-index) k)]
 	  [else
-	   (quick-select! vec (add1 pivot-new-index) right (sub1 (- k pivot-dist)))])]))
+	   (quick-select! vec 
+			  (add1 pivot-new-index)
+			  right 
+			  (sub1 (- k pivot-dist)))])]))
 
 
 
