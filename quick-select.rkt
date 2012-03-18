@@ -26,7 +26,7 @@
 |#
 
 (define (quick-select! vec left right k)
-  (printf "~a ~a vec\n" left right vec)
+  (printf "~a ~a ~a\n" left right vec)
   (cond [(= left right)
 	 (vector-ref vec left)]
 	[else
